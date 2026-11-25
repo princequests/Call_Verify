@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallVerify — Phone Verification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page">
+        <header class="brand">
+            <div class="brand-mark">CV</div>
+            <div>
+                <h1>CallVerify</h1>
+                <p>Simple phone verification</p>
+            </div>
+        </header>
+
+        <section class="verification-card">
+            <div class="eyebrow">PHONE VERIFICATION</div>
+
+            <h2>Verify your number</h2>
+
+            <p class="description">
+                Confirm that you have access to your phone by making
+                a quick call to our verification line.
+            </p>
+
+            <form id="verifyForm">
+                <label for="phoneNumber">Your phone number</label>
+
+                <input
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    type="tel"
+                    placeholder="08123456789"
+                    autocomplete="tel"
+                    required
+                >
+
+                <button id="verifyButton" type="submit">
+                    Verify my number
+                </button>
+            </form>
+
+            <section id="callPanel" class="call-panel hidden">
+                <div class="call-panel-label">CALL THIS NUMBER</div>
+
+                <div id="dialNumber" class="dial-number">
+                    +234
+                </div>
+
+                <button id="copyButton" class="copy-button" type="button">
+                    Copy number
+                </button>
+
+                <div class="countdown-row">
+                    <span id="countdownLabel">Time to start your call</span>
+                    <strong id="countdown">01:30</strong>
+                </div>
+
+                <div id="callStatus" class="call-status">
+                    <span class="status-dot"></span>
+                    <span id="callStatusText">Waiting for your call</span>
+                </div>
+
+                <p class="call-instruction">
+                    Call the number above from the phone you entered.
+                    You do not need to speak or enter a code.
+                </p>
+            </section>
+
+            <div id="result" class="result hidden" aria-live="polite">
+                <div id="resultTitle"></div>
+                <div id="resultMessage"></div>
+            </div>
+
+            <button id="retryButton" class="retry-button hidden" type="button">
+                Try again
+            </button>
+
+            <div class="privacy-note">
+                <span>🔒</span>
+                Your number is used for this verification request.
+            </div>
+        </section>
+
+        <footer>
+            <span>CallVerify</span>
+            <span>Simple. Secure. Reliable.</span>
+        </footer>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

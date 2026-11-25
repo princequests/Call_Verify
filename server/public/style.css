@@ -1,0 +1,403 @@
+
+:root {
+    --primary: #6257e8;
+    --primary-hover: #5145d0;
+    --text: #182033;
+    --muted: #68738a;
+    --border: #e5e8f0;
+    --background: #f5f6fb;
+    --success: #168653;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.page {
+    width: 100%;
+    max-width: 1120px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 42px 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    gap: 12px;
+}
+
+.brand h1,
+.brand p {
+    text-align: center;
+}
+
+
+.brand-mark {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    background: var(--primary);
+    color: white;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 750;
+    letter-spacing: -0.8px;
+}
+
+.brand p {
+    margin: 5px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.verification-card {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 38px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: 0 18px 55px rgba(28, 35, 70, 0.07);
+}
+
+.eyebrow {
+    margin-bottom: 14px;
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.verification-card h2 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1.25;
+    letter-spacing: -1px;
+}
+
+.description {
+    margin: 14px 0 28px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+label {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    height: 54px;
+    padding: 0 15px;
+    border: 1px solid #dce1ec;
+    border-radius: 11px;
+    background: white;
+    color: var(--text);
+    font: inherit;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(98, 87, 232, 0.12);
+}
+
+button {
+    min-height: 52px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 11px;
+    background: var(--primary);
+    color: white;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+form button {
+    width: 100%;
+    margin-top: 8px;
+}
+
+button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Call instructions */
+
+.call-panel {
+    margin-top: 24px;
+    padding: 24px;
+    border: 1px solid #e3e0ff;
+    border-radius: 16px;
+    background: #f8f7ff;
+    text-align: center;
+}
+
+.call-panel-label {
+    margin-bottom: 12px;
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.dial-number {
+    margin-bottom: 16px;
+    color: var(--text);
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+    overflow-wrap: anywhere;
+}
+
+.copy-button {
+    min-height: 42px;
+    background: white;
+    color: var(--primary);
+    border: 1px solid #d9d5ff;
+    font-size: 13px;
+}
+
+.copy-button:hover {
+    background: #eeecff;
+    color: var(--primary-hover);
+}
+
+.countdown-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid #e5e2fa;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.countdown-row strong {
+    color: var(--text);
+    font-size: 16px;
+    font-variant-numeric: tabular-nums;
+}
+
+.call-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 20px;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--primary);
+    animation: callPulse 1.5s infinite;
+}
+
+.call-status.verified {
+    color: var(--success);
+}
+
+.call-status.verified .status-dot {
+    background: var(--success);
+    animation: none;
+}
+
+.call-status.expired {
+    color: #a12d2d;
+}
+
+.call-status.expired .status-dot {
+    background: #a12d2d;
+    animation: none;
+}
+
+.call-instruction {
+    margin: 16px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* Result messages */
+
+.result {
+    margin-top: 22px;
+    padding: 17px;
+    border-radius: 12px;
+    background: #f0efff;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+#resultTitle {
+    margin-bottom: 5px;
+    font-weight: 800;
+}
+
+.result.success {
+    background: #eaf8f0;
+    color: #126b43;
+}
+
+.result.error {
+    background: #fff0f0;
+    color: #a12d2d;
+}
+
+.retry-button {
+    width: 100%;
+    margin-top: 14px;
+    background: white;
+    color: var(--primary);
+    border: 1px solid #d9d5ff;
+}
+
+.retry-button:hover {
+    background: #eeecff;
+    color: var(--primary-hover);
+}
+
+/* Privacy and footer */
+
+.privacy-note {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 26px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: auto;
+    padding-top: 48px;
+    color: #8b92a3;
+    font-size: 12px;
+}
+
+/* Animation */
+
+@keyframes callPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(98, 87, 232, 0.3);
+    }
+
+    70% {
+        box-shadow: 0 0 0 7px rgba(98, 87, 232, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(98, 87, 232, 0);
+    }
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+    .page {
+        padding: 28px 18px;
+    }
+
+    .brand {
+        margin-bottom: 42px;
+    }
+
+    .verification-card {
+        padding: 26px 22px;
+        border-radius: 18px;
+    }
+
+    .verification-card h2 {
+        font-size: 26px;
+    }
+
+    .dial-number {
+        font-size: 26px;
+    }
+
+    footer {
+        padding-top: 36px;
+        flex-wrap: wrap;
+    }
+}
+
+/* Center the CallVerify brand */
+.brand {
+    justify-content: center;
+    width: 100%;
+    text-align: left;
+}
+
+.brand {
+    margin-bottom: 32px;
+}
+
+@media (max-width: 400px) {
+    .brand {
+        margin-bottom: 24px;
+    }
+}

@@ -1,2 +1,18 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# Android Studio
+.idea/
+.gradle/
+**/.kotlin/
+**/build/
+**/local.properties
+
+# Logs and temporary files
+*.log
+.DS_Store
+
+# Node.js dependencies
+node_modules/
+
+# Environment secrets
+.env
